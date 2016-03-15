@@ -60,7 +60,7 @@ public class Game extends Canvas implements Runnable
 		addKeyListener(input);
 		addMouseListener(input);
 		addMouseMotionListener(input);
-		Sound.init();
+		//Sound.init();
 		
 		loadSettings();
 		settings.put("antialiasing", true);

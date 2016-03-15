@@ -46,7 +46,6 @@ public abstract class UIComponent extends Rectangle
 	
 	public void click()
 	{ 
-		Sound.CLICK.play();
 	}
 	
 	public boolean getClickable(){return clickable;}

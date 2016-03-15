@@ -93,6 +93,5 @@ public class MassCannon extends Cannon
 			}
 		}
 		fireTimer = System.currentTimeMillis();
-		Sound.SHOOT.play();
 	}
 }

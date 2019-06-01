@@ -8,15 +8,15 @@ import uicomponent.Button;
 public class HighScoreScreen extends MenuScreen
 {
 	public long ticksSurvived;
-	
+
 	private BufferedReader reader;
-	
+
 	private ArrayList<String> scoreList = new ArrayList<String>();
-	
+
 	private ArrayList<String> nameList = new ArrayList<String>();
-	
+
 	private String name;
-	
+
 	private static final String[] SWEAR_WORDS = {"fuck","shit","cunt","bitch","fag","nigger","tard",
 			"blaze","tit","porn","vag","pussy","cock","whore","slut","hole","dick","masturbate",
 			"pubes","suck","gay","sex","lesbian","balls","butt","prostitute","anal","cum","jizz",
@@ -26,7 +26,7 @@ public class HighScoreScreen extends MenuScreen
 			"fap","condom","bone","scrotum"};
 	
 	private boolean hacker;
-	
+
 	public HighScoreScreen(String name, long ticksSurvived, boolean hacker)
 	{
 		this.ticksSurvived = ticksSurvived;
@@ -41,7 +41,7 @@ public class HighScoreScreen extends MenuScreen
 		
 		updateHighScoresFile();
 	}
-	
+
 	private void updateHighScoresFile()
 	{
 		boolean added = false;
@@ -89,7 +89,7 @@ public class HighScoreScreen extends MenuScreen
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void draw(Graphics g)
 	{
 		super.draw(g);
@@ -113,7 +113,7 @@ public class HighScoreScreen extends MenuScreen
 							+ " seconds", -420, -250 + i * 21);
 		}
 	}
-	
+
 	public boolean hasProfanity(String s)
 	{
 		for(String word: SWEAR_WORDS)
@@ -121,39 +121,12 @@ public class HighScoreScreen extends MenuScreen
 				return true;
 		return false;
 	}
-	
-	public ArrayList<String> getScoreList()
-	{
-		return scoreList;
-	}
-	
-	public String getName()
-	{
-		return name;
-	}
-	
-	public void setName(String n)
-	{
-		name = n;
-	}
-	
-	public void setTicksSurvived(long t)
-	{
-		ticksSurvived = t;
-	}
-	
-	public long getTicksSurvived()
-	{
-		return ticksSurvived;
-	}
-	
-	public boolean getHacker()
-	{
-		return hacker;
-	}
-	
-	public void setHacker(boolean b)
-	{
-		hacker = b;
-	}
+
+	public ArrayList<String> getScoreList(){return scoreList;}
+	public String getName(){return name;}
+	public void setName(String n){name = n;}
+	public void setTicksSurvived(long t){ticksSurvived = t;}
+	public long getTicksSurvived(){return ticksSurvived;}
+	public boolean getHacker(){return hacker;}
+	public void setHacker(boolean b){hacker = b;}
 }

@@ -17,14 +17,8 @@ public class HighScoreScreen extends MenuScreen
 
 	private String name;
 
-	private static final String[] SWEAR_WORDS = {"fuck","shit","cunt","bitch","fag","nigger","tard",
-			"blaze","tit","porn","vag","pussy","cock","whore","slut","hole","dick","masturbate",
-			"pubes","suck","gay","sex","lesbian","balls","butt","prostitute","anal","cum","jizz",
-			"semen","naked","anus","bastard","beaner","boner","clit","hell","crap","shat","shart",
-			"dildo","douche","dumb","gooch","jerk","jew","muff","negro","piss","prick","queef",
-			"queer","skank","weed","dope","blow","meth","wank","nuts","taint","boob","turd","fart",
-			"fap","condom","bone","scrotum"};
-	
+	private static final String[] SWEAR_WORDS = {"test", "example"};
+
 	private boolean hacker;
 
 	public HighScoreScreen(String name, long ticksSurvived, boolean hacker)
@@ -35,10 +29,10 @@ public class HighScoreScreen extends MenuScreen
 			this.name = "Equinox Player";
 		if(hacker)
 			this.name = "HACKER";
-		
+
 		listOfComponents.add(new Button(0, -300, Game.WIDTH, 50, "HIGHSCORES", null, false));
 		listOfComponents.add(new Button(Game.WIDTH / 2 - 50, 300, 100, 50, "TITLE", "TitleScreen"));
-		
+
 		updateHighScoresFile();
 	}
 
@@ -78,12 +72,12 @@ public class HighScoreScreen extends MenuScreen
 				nameList.add(oldName);
 			}
 			reader.close();
-			
+
 			BufferedWriter writer = new BufferedWriter(new FileWriter(userHome + "/equinox_highscores.txt"));
 			for(int i=0; i<30; i++)
 				writer.write(nameList.get(i) + ":" + scoreList.get(i) + "\n");
 			writer.close();
-			
+
 		} catch(IOException e)
 		{
 			e.printStackTrace();

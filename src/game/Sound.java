@@ -18,33 +18,33 @@ public enum Sound
 
 	Sound(String soundFileName)
 	{
-		try
-		{
-			URL url = this.getClass().getClassLoader().getResource("sounds/" + soundFileName);
-			AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(url);
-			clip = AudioSystem.getClip();
-			clip.open(audioInputStream);
-		}catch(UnsupportedAudioFileException e)
-		{
-			e.printStackTrace();
-		}catch(IOException e)
-		{
-			e.printStackTrace();
-		}catch(LineUnavailableException e)
-		{
-			e.printStackTrace();
-		}
+		//try
+		//{
+			//URL url = this.getClass().getClassLoader().getResource("sounds/" + soundFileName);
+			//AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(url);
+			//clip = AudioSystem.getClip();
+			//clip.open(audioInputStream);
+		//}catch(UnsupportedAudioFileException e)
+		//{
+			//e.printStackTrace();
+		//}catch(IOException e)
+		//{
+			//e.printStackTrace();
+		//}catch(LineUnavailableException e)
+		//{
+			//e.printStackTrace();
+		//}
 	}
 	
 	public void play()
 	{
-		if (Game.settings.get("sound"))
-		{
-			if (clip.isRunning())
-				clip.stop();
-			clip.setFramePosition(0);
-			clip.start();
-		}
+		//if (Game.settings.get("sound"))
+		//{
+			//if (clip.isRunning())
+				//clip.stop();
+			//clip.setFramePosition(0);
+			//clip.start();
+		//}
 	}
 
 	// Optional method to pre-load all the sound files.

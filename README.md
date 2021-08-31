@@ -5,6 +5,15 @@ Equinox is an unique arcade-style shooter made for AP Computer Science. It was p
 ![gameplay](http://i.imgur.com/unOjjlI.gif)
 ## Tech
 Equinox was programmed in Java.
-## Downloads
-You can download Equinox [here](http://www.filedropper.com/equinoxhomeversion).
+## Compilation
+
+```
+javac -cp src/ -d build src/game/Game.java
+cp -r src/sounds build
+cd build
+jar --create --verbose --file=asdf.jar --main-class=game/Game entity/ game/ screen/ uicomponent/ sounds/
+java -jar asdf.jar
+```
+
+With 2 monitors it wouldn't come to the foreground, so I had to open and close my laptop lid.
 

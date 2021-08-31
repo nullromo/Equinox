@@ -38,50 +38,50 @@ public class HighScoreScreen extends MenuScreen
 
 	private void updateHighScoresFile()
 	{
-		boolean added = false;
-		try
-		{
-			String userHome = System.getProperty("user.home");
-			File highScoresFile = new File(userHome + "/equinox_highscores.txt");
-			if(highScoresFile.exists())
-			{
-				System.out.println("Getting high scores from computer.");
-				reader = new BufferedReader(new FileReader(userHome + "/equinox_highscores.txt"));
-			}
-			else
-			{
-				System.out.println("Getting high scores from jar.");
-				reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/equinox_highscores.txt")));
-			}
-			for(int i = 0; i < 30; i++)
-			{
-				String info = reader.readLine();
-				String[] splitInfo = info.split(":");
-				String oldName = splitInfo[0];
-				int oldScore = Integer.parseInt(splitInfo[1]);
-				long newScore = ticksSurvived / 60;
-				if(!added && newScore > oldScore)
-				{
-					scoreList.add(""+newScore);
-					nameList.add(name);
-					added = true;
-					if(++i >= 30)
-						break;
-				}
-				scoreList.add(""+oldScore);
-				nameList.add(oldName);
-			}
-			reader.close();
+		//boolean added = false;
+		//try
+		//{
+			//String userHome = System.getProperty("user.home");
+			//File highScoresFile = new File(userHome + "/equinox_highscores.txt");
+			//if(highScoresFile.exists())
+			//{
+				//System.out.println("Getting high scores from computer.");
+				//reader = new BufferedReader(new FileReader(userHome + "/equinox_highscores.txt"));
+			//}
+			//else
+			//{
+				//System.out.println("Getting high scores from jar.");
+				//reader = new BufferedReader(new InputStreamReader(getClass().getResourceAsStream("/equinox_highscores.txt")));
+			//}
+			//for(int i = 0; i < 30; i++)
+			//{
+				//String info = reader.readLine();
+				//String[] splitInfo = info.split(":");
+				//String oldName = splitInfo[0];
+				//int oldScore = Integer.parseInt(splitInfo[1]);
+				//long newScore = ticksSurvived / 60;
+				//if(!added && newScore > oldScore)
+				//{
+					//scoreList.add(""+newScore);
+					//nameList.add(name);
+					//added = true;
+					//if(++i >= 30)
+						//break;
+				//}
+				//scoreList.add(""+oldScore);
+				//nameList.add(oldName);
+			//}
+			//reader.close();
 
-			BufferedWriter writer = new BufferedWriter(new FileWriter(userHome + "/equinox_highscores.txt"));
-			for(int i=0; i<30; i++)
-				writer.write(nameList.get(i) + ":" + scoreList.get(i) + "\n");
-			writer.close();
+			//BufferedWriter writer = new BufferedWriter(new FileWriter(userHome + "/equinox_highscores.txt"));
+			//for(int i=0; i<30; i++)
+				//writer.write(nameList.get(i) + ":" + scoreList.get(i) + "\n");
+			//writer.close();
 
-		} catch(IOException e)
-		{
-			e.printStackTrace();
-		}
+		//} catch(IOException e)
+		//{
+			//e.printStackTrace();
+		//}
 	}
 
 	public void draw(Graphics g)
